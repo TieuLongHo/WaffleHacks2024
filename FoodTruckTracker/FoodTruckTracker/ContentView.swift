@@ -50,7 +50,6 @@ struct ContentView: View {
                     ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
                         
                         RoundedRectangle(cornerRadius: 12.5)
-                            .foregroundStyle(.white)
                             .shadow(radius: 5)
                         
                         VStack(alignment: .leading) {
@@ -58,6 +57,7 @@ struct ContentView: View {
                             Text("\(truck.events[0].name.capitalized)")
                                 .font(.title2)
                                 .padding(.bottom, 10)
+                                
                             
                             HStack {
                                 

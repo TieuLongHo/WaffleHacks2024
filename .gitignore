@@ -1,0 +1,4 @@
+/server/myenv/*
+/server/app/controllers/__pycache__/*
+/server/app/models/__pycache__/*
+/server/app/__pycache__/*
