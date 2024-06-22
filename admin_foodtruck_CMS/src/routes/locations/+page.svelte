@@ -36,6 +36,7 @@
 			}
 
 			locations = await locationsResponse.json();
+			console.log(locations);
 			foodTrucks = await foodTrucksResponse.json();
 			events = await eventsResponse.json();
 		} catch (err) {
