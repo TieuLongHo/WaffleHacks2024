@@ -7,8 +7,9 @@ location_bp = Blueprint("location_bp", __name__, url_prefix="/location")
 
 @location_bp.route("", methods=["GET"])
 def get_all_locations():
-    locationes = Location.query.all()
-    return jsonify([location.serialize() for location in locationes])
+    locations = Location.query.all()
+    print([location.serialize() for location in locations])
+    return jsonify([location.serialize() for location in locations])
 
 
 @location_bp.route("/<int:location_id>", methods=["GET"])
