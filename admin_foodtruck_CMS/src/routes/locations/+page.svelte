@@ -75,8 +75,8 @@
 		const event_id = formData.get('event_id');
 
 		if (currentMarker) {
-			const latitude = currentMarker.lngLat.lng;
-			const longitude = currentMarker.lngLat.lat;
+			const latitude = currentMarker.lngLat.lat;
+			const longitude = currentMarker.lngLat.lng;
 
 			const data = {
 				event_id: parseInt(event_id as string, 10),
@@ -86,6 +86,14 @@
 			};
 
 			console.log(JSON.stringify(data));
+
+			await fetch('http://127.0.0.1:5000/location', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(data)
+			});
 
 			currentMarker.showForm = false;
 			currentMarker = null;
