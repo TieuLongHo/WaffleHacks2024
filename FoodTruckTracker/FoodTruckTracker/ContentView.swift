@@ -17,6 +17,8 @@ struct ContentView: View {
     
     @State var selection: FoodTruck?
     
+    private var df = DateFormatter()
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Food Truck")
@@ -35,7 +37,7 @@ struct ContentView: View {
                          //.tint(.purple)
                  }
             }
-            .clipShape(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/))
+            .clipShape(RoundedRectangle(cornerRadius: 25.0))
             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             .sheet(item: $selection) { truck in
                 
@@ -43,6 +45,34 @@ struct ContentView: View {
                     
                     Text(truck.name)
                         .font(.title2)
+                        .bold()
+                        
+                    ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
+                        
+                        RoundedRectangle(cornerRadius: 12.5)
+                            .foregroundStyle(.white)
+                            .shadow(radius: 5)
+                        
+                        VStack(alignment: .leading) {
+                            
+                            Text("\(truck.events[0].name.capitalized)")
+                                .font(.title2)
+                                .padding(.bottom, 10)
+                            
+                            HStack {
+                                
+                                Text("\( df.string(from: Date(timeIntervalSince1970: TimeInterval(truck.events[0].start_date))) )")
+                                Text(" – ")
+                                Text("\( df.string(from: Date(timeIntervalSince1970: TimeInterval(truck.events[0].end_date))) )")
+                                
+                            }
+                            
+                        }
+                        .padding()
+                        
+                        
+                    }
+                    .padding()
                     
                     List {
                         ForEach(truck.menu) { dish in
@@ -51,7 +81,7 @@ struct ContentView: View {
                                     
                                     Text("\(dish.name)")
                                     Spacer()
-                                    Text("\(dish.price)")
+                                Text("\(String(format: "%.2f",dish.price)) Fr.")
                                     
                                 }
                             
@@ -71,7 +101,9 @@ struct ContentView: View {
                 #endif
                 .onAppear() {
                     
-                    print(truck.menu)
+                    //print(truck.events)
+                    
+                   
                     
                 }
                 .padding()
@@ -88,12 +120,16 @@ struct ContentView: View {
             
             context.autosaveEnabled = false
        
+            df.dateFormat = "cccc, dd.MM"
+            df.locale = Locale.current
             
             let ft = FoodTruck(name: "Hot Rod", info: "the best one", long: 12.345, lat: 3.21, menu: [
             
                 Dish(name: "Hot Dog", ingredients: ["bun", "hot"], price: 3.45),
                 Dish(name: "Fries", ingredients: ["french", "fries"], price: 5.31)
                 
+            ], events: [
+                Event(name: "Summer Solstice", start_date: Int(Date.now.timeIntervalSince1970), end_date: Int(Date.now.timeIntervalSince1970 + 1000))
             ])
             
           
