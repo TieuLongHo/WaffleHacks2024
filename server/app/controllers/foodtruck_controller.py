@@ -3,7 +3,7 @@ from flask import Blueprint, request, jsonify
 from app.models.foodtruck import Foodtruck
 from app import db
 
-foodtruck_bp = Blueprint('foodtruck_bp', __name__, url_prefix='/foodtrucks')
+foodtruck_bp = Blueprint('foodtruck_bp', __name__, url_prefix='/foodtruck')
 
 @foodtruck_bp.route('', methods=['GET'])
 def get_all_foodtrucks():
@@ -21,7 +21,7 @@ def get_foodtruck(foodtruck_id):
 @foodtruck_bp.route('', methods=['POST'])
 def create_dish():
     data = request.get_json()
-    new_foodtruck = Foodtruck(name=data['name'], info=data['info'], longitude=data['longitude'], latitude=data['latitude'])
+    new_foodtruck = Foodtruck(name=data['name'], info=data['info'])
     db.session.add(new_foodtruck)
     db.session.commit()
     return jsonify(new_foodtruck.serialize()), 201
