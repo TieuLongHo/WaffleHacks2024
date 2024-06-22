@@ -46,10 +46,19 @@ struct ContentView: View {
                     
                     List {
                         ForEach(truck.menu) { dish in
-                            Section(header: Text("Major \(dish.name) Ocean Seas")) {
-                              //  ForEach(dish.ingredients, id: \.self) { piece in
-                              //      Text(piece)
-                              //  }
+                            Section(header:
+                                HStack {
+                                    
+                                    Text("\(dish.name)")
+                                    Spacer()
+                                    Text("\(dish.price)")
+                                    
+                                }
+                            
+                            ) {
+                                ForEach(dish.ingredients, id: \.self) { piece in
+                                    Text(piece)
+                                }
                             }
                         }
                     }
@@ -57,27 +66,18 @@ struct ContentView: View {
                     
                     
                 }
+                #if os(macOS)
+                .frame(minWidth: 300, minHeight: 300)
+                #endif
+                .onAppear() {
+                    
+                    print(truck.menu)
+                    
+                }
                 .padding()
                     
                 
             }
-            
-            HStack {
-                
-                
-                
-            // add a list for the menu, maybe even prices
-            /*
-                List {
-                    ForEach(trucks) {
-                        Text($0.name)
-                    }
-                }
-                */
-                
-                
-                
-           }
             
             
             
@@ -87,22 +87,22 @@ struct ContentView: View {
         .onAppear() {
             
             context.autosaveEnabled = false
+       
             
-            let ft = FoodTruck(name: "Hot Rod", info: "the best one", long: 12.345, lat: 3.21)
+            let ft = FoodTruck(name: "Hot Rod", info: "the best one", long: 12.345, lat: 3.21, menu: [
+            
+                Dish(name: "Hot Dog", ingredients: ["bun", "hot"], price: 3.45),
+                Dish(name: "Fries", ingredients: ["french", "fries"], price: 5.31)
+                
+            ])
+            
+          
             
             
             context.insert(ft)
-        
-            let d1 = Dish(truck: ft, name: "Hot Dog", price: 3.45)
-            let d2 = Dish(truck: ft, name: "Fries", price: 5.31)
-            
-            
-            context.insert(d1)
-            context.insert(d2)
-            
-            
             
         }
+        
     }
 }
 

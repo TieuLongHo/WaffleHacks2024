@@ -15,12 +15,12 @@ class Dish {
     
     var name: String
     
-    //var ingredients: [String]
+    var ingredients: [String]
     var price: Float
     
-    init(truck: FoodTruck?, name: String, price: Float) {
-        self.truck = truck
+    init(name: String, ingredients: [String], price: Float) {
         self.name = name
+        self.ingredients = ingredients
         self.price = price
     }
     
@@ -36,15 +36,14 @@ class FoodTruck {
     var long: Double
     var lat: Double
     
-    @Relationship(deleteRule: .cascade, inverse:\Dish.truck)
     var menu: [Dish]
     
-    init(name: String, info: String, long: Double, lat: Double) {
+    init(name: String, info: String, long: Double, lat: Double, menu: [Dish]) {
         self.name = name
         self.info = info
         self.long = long
         self.lat = lat
-        self.menu = []
+        self.menu = menu
     }
     
 }
