@@ -112,7 +112,7 @@
 <MapLibre
 	center={[8.2, 47]}
 	zoom={7}
-	class="map h-screen"
+	class="map h-full w-10 flex-grow"
 	standardControls
 	style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
 >
@@ -122,6 +122,7 @@
 		<DefaultMarker lngLat={marker.lngLat} />
 	{/each}
 </MapLibre>
+<div class="m-3"></div>
 
 {#if currentMarker}
 	<div

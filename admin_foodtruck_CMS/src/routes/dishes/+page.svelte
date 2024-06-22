@@ -10,6 +10,7 @@
 	let truckId = '1';
 	let dishName = '';
 	let price = '';
+	let ingredients = ['']; // Initialize with one empty ingredient input
 	let message = '';
 
 	onMount(async () => {
@@ -36,7 +37,8 @@
 		const dishData = {
 			truck_id: parseInt(truckId),
 			name: dishName,
-			price: parseFloat(price)
+			price: parseFloat(price),
+			ingredients: ingredients.filter((ingredient) => ingredient.trim() !== '') // Remove empty ingredients
 		};
 
 		const response = await fetch('http://127.0.0.1:5000/dish', {
@@ -52,14 +54,24 @@
 			truckId = '';
 			dishName = '';
 			price = '';
+			ingredients = [''];
 			await fetchDishes();
 		} else {
 			message = 'Failed to add dish.';
 		}
 	}
+
+	function addIngredient() {
+		ingredients = [...ingredients, ''];
+	}
+
+	function removeIngredient(index) {
+		ingredients = ingredients.filter((_, i) => i !== index);
+	}
 </script>
 
 <main class="container mx-auto p-4">
+	<div class="mt-36"></div>
 	<h1 class="mb-4 text-2xl font-bold">Add New Dish</h1>
 	<form on:submit={submitForm}>
 		<div class="mb-4">
@@ -83,6 +95,26 @@
 				required
 			/>
 		</div>
+		<div class="mb-4">
+			<label class="block text-sm font-medium text-gray-700">Ingredients</label>
+			{#each ingredients as ingredient, index}
+				<div class="mt-2 flex items-center">
+					<input
+						type="text"
+						class="mt-1 block w-full rounded-md border border-gray-300 p-2"
+						bind:value={ingredients[index]}
+					/>
+					{#if ingredients.length > 1}
+						<button type="button" class="ml-2 text-red-500" on:click={() => removeIngredient(index)}
+							>&times;</button
+						>
+					{/if}
+				</div>
+			{/each}
+			<button type="button" class="mt-2 text-blue-500" on:click={addIngredient}
+				>Add Ingredient</button
+			>
+		</div>
 		<div class="flex justify-end">
 			<button type="submit" class="rounded bg-blue-500 px-4 py-2 text-white">Submit</button>
 		</div>
@@ -97,7 +129,7 @@
 	{:else if error}
 		<p>Error: {error}</p>
 	{:else}
-		<List tag="ul" list="none" class="max-w-md divide-y divide-gray-200 dark:divide-gray-700">
+		<List tag="ul" list="none" class="divide-y divide-gray-200 dark:divide-gray-700">
 			{#each dishes as dish}
 				<Li class="pb-3 sm:pb-4">
 					<div class="flex items-center space-x-4 rtl:space-x-reverse">
@@ -108,6 +140,9 @@
 						</div>
 						<div class="min-w-0 flex-1">
 							<p class="text-m truncate font-medium text-gray-900 dark:text-white">{dish.name}</p>
+							{#each dish.ingredients as ingredient}
+								<p class="text-sm text-gray-500 dark:text-gray-400">{ingredient}</p>
+							{/each}
 						</div>
 						<div
 							class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white"

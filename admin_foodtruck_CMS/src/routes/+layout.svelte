@@ -3,7 +3,9 @@
 	import Sidebars from './Sidebars.svelte';
 </script>
 
-<Sidebars />
-<slot></slot>
+<div class="flex h-full flex-row">
+	<Sidebars />
+	<slot></slot>
+</div>
 
 <style></style>
