@@ -75,14 +75,14 @@
 		const event_id = formData.get('event_id');
 
 		if (currentMarker) {
-			const latitude = currentMarker.lngLat[1];
-			const longitude = currentMarker.lngLat[0];
+			const latitude = currentMarker.lngLat.lng;
+			const longitude = currentMarker.lngLat.lat;
 
 			const data = {
-				event_id: parseInt(event_id, 10),
-				foodtruck_id: parseInt(foodtruck_id, 10),
-				latitude: latitude,
-				longitude: longitude
+				event_id: parseInt(event_id as string, 10),
+				foodtruck_id: parseInt(foodtruck_id as string, 10),
+				latitude,
+				longitude
 			};
 
 			console.log(JSON.stringify(data));
@@ -170,6 +170,8 @@
 						/>
 					</label>
 				</div>
+				<input type="hidden" name="latitude" value={currentMarker.lngLat[1]} />
+				<input type="hidden" name="longitude" value={currentMarker.lngLat[0]} />
 				<div class="flex justify-end">
 					<button
 						type="button"
