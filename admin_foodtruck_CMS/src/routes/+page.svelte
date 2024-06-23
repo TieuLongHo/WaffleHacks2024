@@ -52,6 +52,7 @@
 </script>
 
 <main class="container mx-auto p-4">
+	<div class="mt-36"></div>
 	<h1 class="mb-4 text-2xl font-bold">Add New Event</h1>
 	<form on:submit={submitForm}>
 		<div class="mb-4">

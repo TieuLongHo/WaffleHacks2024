@@ -4,8 +4,8 @@
 	let spanClass = 'flex-1 ms-3 whitespace-nowrap';
 </script>
 
-<Sidebar>
-	<SidebarWrapper>
+<Sidebar class="h-full">
+	<SidebarWrapper class="h-full">
 		<SidebarGroup>
 			<SidebarItem label="Events" href="/">
 				<svelte:fragment slot="icon">
