@@ -50,20 +50,21 @@ struct ContentView: View {
                     ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
                         
                         RoundedRectangle(cornerRadius: 12.5)
+                            .foregroundStyle(.white)
                             .shadow(radius: 5)
                         
                         VStack(alignment: .leading) {
                             
-                            Text("\(truck.events[0].name.capitalized)")
+                            Text("\(truck.event.name.capitalized)")
                                 .font(.title2)
                                 .padding(.bottom, 10)
                                 
                             
                             HStack {
                                 
-                                Text("\( df.string(from: Date(timeIntervalSince1970: TimeInterval(truck.events[0].start_date))) )")
+                                Text("\( df.string(from: Date(timeIntervalSince1970: TimeInterval(truck.event.start_date))) )")
                                 Text(" – ")
-                                Text("\( df.string(from: Date(timeIntervalSince1970: TimeInterval(truck.events[0].end_date))) )")
+                                Text("\( df.string(from: Date(timeIntervalSince1970: TimeInterval(truck.event.end_date))) )")
                                 
                             }
                             
@@ -119,6 +120,14 @@ struct ContentView: View {
         .onAppear() {
             
             context.autosaveEnabled = false
+            
+            
+            Task {
+                
+                let t = await REST.trucks()
+                
+            }
+            
        
             df.dateFormat = "cccc, dd.MM"
             df.locale = Locale.current
@@ -128,9 +137,9 @@ struct ContentView: View {
                 Dish(name: "Hot Dog", ingredients: ["bun", "hot"], price: 3.45),
                 Dish(name: "Fries", ingredients: ["french", "fries"], price: 5.31)
                 
-            ], events: [
+            ], event:
                 Event(name: "Summer Solstice", start_date: Int(Date.now.timeIntervalSince1970), end_date: Int(Date.now.timeIntervalSince1970 + 1000))
-            ])
+            )
             
           
             

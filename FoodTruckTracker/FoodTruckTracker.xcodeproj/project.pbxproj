@@ -22,6 +22,7 @@
 		6A3EE66D2C26D15300E13067 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6A3EE66F2C26D15300E13067 /* FoodTruckTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodTruckTracker.entitlements; sourceTree = "<group>"; };
 		6A3EE6752C26D82F00E13067 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		6AC64FD12C283A4F004AA8B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		6A3EE6652C26D15100E13067 /* FoodTruckTracker */ = {
 			isa = PBXGroup;
 			children = (
+				6AC64FD12C283A4F004AA8B9 /* Info.plist */,
 				6A3EE6662C26D15100E13067 /* FoodTruckTrackerApp.swift */,
 				6A3EE6682C26D15100E13067 /* ContentView.swift */,
 				6A3EE6752C26D82F00E13067 /* Models.swift */,
@@ -280,9 +282,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodTruckTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = 3QL75UNV78;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodTruckTracker/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,9 +314,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodTruckTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = 3QL75UNV78;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoodTruckTracker/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
