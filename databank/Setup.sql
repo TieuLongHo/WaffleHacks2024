@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS FoodTruck CASCADE;
 DROP TABLE IF EXISTS Event CASCADE;
 DROP TABLE IF EXISTS FoodTruck_Event CASCADE;
+DROP TABLE IF EXISTS Dish CASCADE;
 
 CREATE TABLE FoodTruck (
     id SERIAL PRIMARY KEY,
@@ -37,8 +38,11 @@ CREATE TABLE Dish (
 
 
 INSERT INTO FoodTruck (name, info, event_ids) VALUES ('Tasty Truck', 'Gourmet food on wheels', '{1, 2}');
-INSERT INTO Dish (truck_id, name, price) VALUES (1, 'Burger', 9.99);
-INSERT INTO Dish (truck_id, name, price) VALUES (1, 'Fries', 3.99);
+INSERT INTO Dish (truck_id, name, price, ingredients) VALUES
+(1, 'Burger', 9.99, ARRAY['beef patty', 'lettuce', 'tomato', 'cheese', 'bun']),
+(1, 'Fries', 3.99, ARRAY['potatoes', 'salt', 'oil']),
+(1, 'Taco', 5.99, ARRAY['tortilla', 'beef', 'lettuce', 'cheese', 'salsa']),
+(1, 'Salad', 4.99, ARRAY['lettuce', 'tomato', 'cucumber', 'olive oil', 'vinegar']);
 
 INSERT INTO Event (name, start_date, end_date) VALUES ('Food Festival', '2024-07-01', '2024-07-03');
 INSERT INTO Event (name, start_date, end_date) VALUES ('Street Fair', '2024-08-15', '2024-08-20');

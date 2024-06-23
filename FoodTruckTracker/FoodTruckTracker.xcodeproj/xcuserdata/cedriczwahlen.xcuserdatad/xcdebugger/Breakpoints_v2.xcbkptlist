@@ -14,8 +14,8 @@
             filePath = "FoodTruckTracker/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -24,14 +24,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D1F7C936-3727-4FA7-87DA-CDFF0B62DE36"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTruckTracker/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -40,74 +40,16 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E0B1A476-D5CA-4ABA-8A70-7EC4CBC54993"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTruckTracker/Models.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "trucks()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E0B1A476-D5CA-4ABA-8A70-7EC4CBC54993 - 1c87faa36c05bd0c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for static FoodTruckTracker.REST.trucks() async -&gt; Swift.Array&lt;FoodTruckTracker.FoodTruck&gt;"
-                  moduleName = "FoodTruckTracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cedriczwahlen/Documents/Coding/Unity/WaffleHacks2024/FoodTruckTracker/FoodTruckTracker/Models.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136">
-               </Location>
-               <Location
-                  uuid = "E0B1A476-D5CA-4ABA-8A70-7EC4CBC54993 - 1b2900fba7d00508"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for static FoodTruckTracker.REST.trucks() async -&gt; Swift.Array&lt;FoodTruckTracker.FoodTruck&gt;"
-                  moduleName = "FoodTruckTracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cedriczwahlen/Documents/Coding/Unity/WaffleHacks2024/FoodTruckTracker/FoodTruckTracker/Models.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136">
-               </Location>
-               <Location
-                  uuid = "E0B1A476-D5CA-4ABA-8A70-7EC4CBC54993 - 9bb6ae8dcae4e737"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(8) suspend resume partial function for static FoodTruckTracker.REST.trucks() async -&gt; Swift.Array&lt;FoodTruckTracker.FoodTruck&gt;"
-                  moduleName = "FoodTruckTracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cedriczwahlen/Documents/Coding/Unity/WaffleHacks2024/FoodTruckTracker/FoodTruckTracker/Models.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136">
-               </Location>
-               <Location
-                  uuid = "E0B1A476-D5CA-4ABA-8A70-7EC4CBC54993 - 492922b6958a8082"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(10) suspend resume partial function for static FoodTruckTracker.REST.trucks() async -&gt; Swift.Array&lt;FoodTruckTracker.FoodTruck&gt;"
-                  moduleName = "FoodTruckTracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cedriczwahlen/Documents/Coding/Unity/WaffleHacks2024/FoodTruckTracker/FoodTruckTracker/Models.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "136"
-                  endingLineNumber = "136">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -120,8 +62,8 @@
             filePath = "FoodTruckTracker/Models.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "trucks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -136,8 +78,8 @@
             filePath = "FoodTruckTracker/Models.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "trucks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -152,8 +94,8 @@
             filePath = "FoodTruckTracker/Models.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "trucks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -168,8 +110,8 @@
             filePath = "FoodTruckTracker/Models.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "trucks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -178,6 +120,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9D940C56-EC3C-4144-8FA2-CA44FA6491D6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodTruckTracker/Models.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "trucks()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D565C287-7B56-414F-8F13-A1591A10FB15"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -193,17 +151,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D565C287-7B56-414F-8F13-A1591A10FB15"
+            uuid = "AC07B61A-EBC5-4602-8074-7DE4DCDE9425"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FoodTruckTracker/Models.swift"
+            filePath = "FoodTruckTracker/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "trucks()"
-            landmarkType = "7">
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42EFAF11-214B-45DB-B5FB-988CF1FD40A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FoodTruckTracker/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

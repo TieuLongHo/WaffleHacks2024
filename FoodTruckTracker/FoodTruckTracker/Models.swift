@@ -10,9 +10,7 @@ import SwiftData
 
 @Model
 class Event {
-    
-    var truck: FoodTruck?
-    
+  
     var name: String
     var start_date: Int
     var end_date: Int
@@ -46,16 +44,14 @@ class Dish {
 @Model
 class FoodTruck {
     
-    //@Attribute(.unique)
     var name: String
     var info: String
     
     var long: Double
     var lat: Double
     
-    @Relationship(deleteRule: .cascade)
     var menu: [Dish]
-    @Relationship(deleteRule: .cascade)
+    
     var event: Event
     
     init(name: String, info: String, long: Double, lat: Double, menu: [Dish], event: Event) {
@@ -77,6 +73,8 @@ class REST {
         guard let loc = try? await URLSession.shared.data(from: URL(string: "http://127.0.0.1:5000/location")!).0,
               let json = try? JSONSerialization.jsonObject(with: loc, options: [.fragmentsAllowed]) else { return [] }
         
+        
+        var foodtrucks = [FoodTruck]()
         
         if let locations = json as? [[String : Any]] {
             
@@ -122,11 +120,12 @@ class REST {
                     
                     for m in mn {
                         
-                     //   dishes.append(Dish(name: "", ingredients: <#T##[String]#>, price: <#T##Float#>))
+                        dishes.append(Dish(name: m["name"] as! String, ingredients: m["ingredients"] as! [String], price: (m["price"] as! NSNumber).floatValue ))
                         
                     }
                     
-                    //let foodtruck = FoodTruck(name: <#T##String#>, info: <#T##String#>, long: <#T##Double#>, lat: <#T##Double#>, menu: <#T##[Dish]#>, event: <#T##Event#>)
+                    foodtrucks.append(FoodTruck(name: ft["name"] as! String, info: ft["info"] as! String, long: lon, lat: lat, menu: dishes, event: event))
+                    
                     
                     
                 }
@@ -135,7 +134,7 @@ class REST {
             
         }
         
-        return []
+        return foodtrucks
     }
     
     

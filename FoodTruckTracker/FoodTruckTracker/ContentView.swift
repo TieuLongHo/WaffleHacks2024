@@ -21,13 +21,18 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            
             Text("Food Truck")
                 .font(.title)
                 .bold()
                 .foregroundStyle(LinearGradient(colors: [.green, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
            
-            Text("Find us! What can we write here?")
+            Text("Come visit us! The map below shows our currently scheduled events. We are open from 11:00 AM to 7:00 PM every day of the event.")
                 .padding(.bottom)
+            
+           
+            
+            
                
             
             Map(selection: $selection) {
@@ -37,8 +42,10 @@ struct ContentView: View {
                          //.tint(.purple)
                  }
             }
-            .clipShape(RoundedRectangle(cornerRadius: 25.0))
+            
+            .clipShape(RoundedRectangle(cornerRadius: 10))
             .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            //.padding(25)
             .sheet(item: $selection) { truck in
                 
                 VStack(alignment: .leading) {
@@ -47,6 +54,10 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                         
+                    Text(truck.info)
+                        .font(.callout)
+                        
+                    
                     ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
                         
                         RoundedRectangle(cornerRadius: 12.5)
@@ -73,6 +84,7 @@ struct ContentView: View {
                         
                         
                     }
+                    .layoutPriority(-3)
                     .padding()
                     
                     List {
@@ -82,18 +94,19 @@ struct ContentView: View {
                                     
                                     Text("\(dish.name)")
                                     Spacer()
+                                
                                 Text("\(String(format: "%.2f",dish.price)) Fr.")
                                     
                                 }
                             
                             ) {
                                 ForEach(dish.ingredients, id: \.self) { piece in
-                                    Text(piece)
+                                    Text(piece.capitalized)
                                 }
                             }
                         }
                     }
-                    
+                    .layoutPriority(3)
                     
                     
                 }
@@ -102,7 +115,7 @@ struct ContentView: View {
                 #endif
                 .onAppear() {
                     
-                    //print(truck.events)
+                    print(truck.menu)
                     
                    
                     
@@ -119,32 +132,33 @@ struct ContentView: View {
         .padding()
         .onAppear() {
             
+            try! ModelContainer(for: FoodTruck.self).deleteAllData()
+            
             context.autosaveEnabled = false
             
-            
-            Task {
-                
-                let t = await REST.trucks()
-                
-            }
-            
-       
             df.dateFormat = "cccc, dd.MM"
             df.locale = Locale.current
             
-            let ft = FoodTruck(name: "Hot Rod", info: "the best one", long: 12.345, lat: 3.21, menu: [
             
-                Dish(name: "Hot Dog", ingredients: ["bun", "hot"], price: 3.45),
-                Dish(name: "Fries", ingredients: ["french", "fries"], price: 5.31)
+            
+            
+            try? context.transaction {
                 
-            ], event:
-                Event(name: "Summer Solstice", start_date: Int(Date.now.timeIntervalSince1970), end_date: Int(Date.now.timeIntervalSince1970 + 1000))
-            )
+                
+                Task {
+                    
+                    
+                    for truck in await REST.trucks() {
+                        
+                        context.insert(truck)
+                        
+                    }
+                    
+                    
+                }
+                
+            }
             
-          
-            
-            
-            context.insert(ft)
             
         }
         
