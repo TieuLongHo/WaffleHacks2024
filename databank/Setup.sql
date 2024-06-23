@@ -46,10 +46,11 @@ INSERT INTO Dish (truck_id, name, price, ingredients) VALUES
 
 INSERT INTO Event (name, start_date, end_date) VALUES ('Food Festival', '2024-07-01', '2024-07-03');
 INSERT INTO Event (name, start_date, end_date) VALUES ('Street Fair', '2024-08-15', '2024-08-20');
+INSERT INTO Event (name, start_date, end_date) VALUES ('Summer Solstice', '2024-06-20', '2024-06-22');
 
 INSERT INTO FoodTruck_Event (foodtruck_id, event_id, longitude, latitude) VALUES (1, 1, 7.729164431958253, 46.76264953467455);
 INSERT INTO FoodTruck_Event (foodtruck_id, event_id, longitude, latitude) VALUES (1, 2, 8.309161313617295, 47.05408208349266);
-
+INSERT INTO FoodTruck_Event (foodtruck_id, event_id, longitude, latitude) VALUES (1, 3, 7.940630231366667, 47.00431505811984);
 
 SELECT * FROM FoodTruck;
 SELECT * FROM Dish;

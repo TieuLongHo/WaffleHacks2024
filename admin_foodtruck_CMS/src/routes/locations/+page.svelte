@@ -158,30 +158,8 @@
 						</select>
 					</label>
 				</div>
-				<div class="mb-4">
-					<label class="block text-sm font-medium text-gray-700">
-						Start Date:
-						<input
-							type="date"
-							bind:value={startDate}
-							class="mt-1 block w-full rounded-md border border-gray-300 p-2"
-							required
-						/>
-					</label>
-				</div>
-				<div class="mb-4">
-					<label class="block text-sm font-medium text-gray-700">
-						End Date:
-						<input
-							type="date"
-							bind:value={endDate}
-							class="mt-1 block w-full rounded-md border border-gray-300 p-2"
-							required
-						/>
-					</label>
-				</div>
-				<input type="hidden" name="latitude" value={currentMarker.lngLat[1]} />
-				<input type="hidden" name="longitude" value={currentMarker.lngLat[0]} />
+				
+				
 				<div class="flex justify-end">
 					<button
 						type="button"
